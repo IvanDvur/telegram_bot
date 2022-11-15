@@ -3,26 +3,23 @@ import psycopg2
 from config import host, user, db_name, password
 from telebot import types
 import datetime
+from sql_mapping import sql_mapping
+
+
 bot = telebot.TeleBot('5794052782:AAHcThXFjptp1rZD_FCasKIJxmlF4UWeYAc')
 DOCTORS_LIST = ["Терапевт", "Хирург", "Стоматолог", "Пульмонолог"]
 chosen_doctor = ""
+closest_time = None
 
+#Подключение базы данных
 try:
     conn = psycopg2.connect(host=host,
                             user=user,
                             password=password,
                             database=db_name)
-    conn.autocommit
+    conn.autocommit = True
 except Exception as e:
     print("Error", e)
-
-
-def choose_asap(message):
-    markup = types.ReplyKeyboardMarkup()
-    yes_btn = types.KeyboardButton("Да")
-    no = types.KeyboardButton("Нет")
-    markup.add(yes_btn, no)
-    bot.send_message(message.chat.id, "Вы хотите записаться на ближайшую дату?", reply_markup=markup)
 
 
 # Старт бота
@@ -51,28 +48,52 @@ def choose_specialist(message):
         bot.send_message(message.chat.id, "Выберите специалиста к которому хотите записаться", reply_markup=markup)
 
     # Если указаный врач существует
-    if message.text in DOCTORS_LIST:
-        specialist = message.text
-        chosen_doctor = message.text
+    if message.text in DOCTORS_LIST or message.text == "Нет, выбрать другой вариант":
+        if message.text in DOCTORS_LIST:
+            chosen_doctor = message.text
+        else:
+            pass
         markup = types.ReplyKeyboardMarkup()
         appointment_asap = types.KeyboardButton("Записаться на ближайшее свободное время")
         watch_schedule_week = types.KeyboardButton("Посмотреть свободное время на этой неделе")
         watch_schedule_month = types.KeyboardButton("Посмотреть свободное время на месяц вперёд")
         return_to_spec = types.KeyboardButton("Вернуться к выбору специалистов")
         markup.add(appointment_asap, watch_schedule_week, watch_schedule_month, return_to_spec)
-        bot.send_message(message.chat.id, f"Вы хотите записаться к {specialist}, выберите нужный вариант",
+        bot.send_message(message.chat.id, f"Вы хотите записаться к {chosen_doctor}, выберите нужный вариант",
                          reply_markup=markup)
 
-    # Если выбран терапевт и нажата кнопка записи на ближайшее время
-    if message.text == "Записаться на ближайшее свободное время" and chosen_doctor == "Терапевт":
+    # Если выбран врач и нажата кнопка записи на ближайшее время
+    if message.text == "Записаться на ближайшее свободное время":
+        global closest_time
+        markup_accept = types.ReplyKeyboardMarkup()
+        yes = types.KeyboardButton("Да")
+        no = types.KeyboardButton("Нет, выбрать другой вариант")
+        markup_accept.add(yes, no)
         with conn.cursor() as cursor:
             try:
-                cursor.execute("SELECT appointment_time FROM therapist WHERE doctor_busy=FALSE LIMIT 1;")
+                cursor.execute(
+                    f"SELECT appointment_time FROM {sql_mapping(chosen_doctor)} WHERE doctor_busy=FALSE LIMIT 1;")
                 closest_time = cursor.fetchone()
-                print(closest_time)
             except Exception as e:
-                print("Error finding date",e)
-        bot.send_message(message.chat.id, f"Ближайшая дата - {closest_time[0].strftime('%d-%m-%Y, %H:%M')}. Вам подходит этот вариант?")
+                print("Error finding date", e)
+        bot.send_message(message.chat.id,
+                         f"Ближайшая дата - {closest_time[0].strftime('%d-%m-%Y, %H:%M')}. Вам подходит этот вариант?",
+                         reply_markup=markup_accept)
 
+    if message.text == "Да":
+        msg = bot.send_message(message.chat.id, "Как вас зовут?(Фамилия Имя)")
+        bot.register_next_step_handler(msg,get_full_name)
+#Запись имени в базу
+def get_full_name(message):
+    name = message.text.split()
+    with conn.cursor() as cursor:
+        try:
+            cursor.execute(
+                f"UPDATE {sql_mapping(chosen_doctor)} SET patient_last_name = '{name[0]}', patient_first_name = '{name[1]}' "
+                f"WHERE appointment_time = '{closest_time[0]}'")
+        except Exception as e:
+            print("Error inserting patient", e)
+        finally:
+            print("success")
 
 bot.polling(non_stop=True)
