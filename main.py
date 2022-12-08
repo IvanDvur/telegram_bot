@@ -5,7 +5,7 @@ from config import host, user, db_name, password
 from telebot import types
 from sql_mapping import sql_mapping
 
-bot = telebot.TeleBot('5794052782:AAHcThXFjptp1rZD_FCasKIJxmlF4UWeYAc')
+bot = telebot.TeleBot('5794052782:AAHcThXFjptp1rZD_FCasKIJxmlF4UWeYA')
 DOCTORS_LIST = ["Терапевт", "Хирург", "Стоматолог", "Пульмонолог"]
 chosen_doctor = ""  # Выбранный врач
 closest_time = None  # Ближайшее время
