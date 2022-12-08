@@ -785,7 +785,7 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1668407397</StartupTime>
+      <StartupTime>1669387796</StartupTime>
     </root>
     <database id="2" parent="1" name="BinTree">
       <ObjectId>16413</ObjectId>
@@ -806,7 +806,7 @@ false Zulu
     <database id="6" parent="1" name="healthClinicBot">
       <ObjectId>40991</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1030</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1085</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="7" parent="1" name="postgres">
@@ -876,7 +876,7 @@ false Zulu
       <Comment>standard public schema</Comment>
       <StateNumber>527</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1031</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1086</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="24" parent="6" name="heap">
@@ -957,14 +957,24 @@ false Zulu
     <table id="37" parent="23" name="dentist">
       <ObjectId>49183</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>1023</StateNumber>
+      <StateNumber>1077</StateNumber>
     </table>
-    <table id="38" parent="23" name="therapist">
+    <table id="38" parent="23" name="surgeon">
+      <ObjectId>57375</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1078</StateNumber>
+    </table>
+    <table id="39" parent="23" name="test_table">
+      <ObjectId>57384</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1053</StateNumber>
+    </table>
+    <table id="40" parent="23" name="therapist">
       <ObjectId>40995</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>995</StateNumber>
+      <StateNumber>1070</StateNumber>
     </table>
-    <routine id="39" parent="23" name="uuid_generate_v1">
+    <routine id="41" parent="23" name="uuid_generate_v1">
       <ObjectId>41009</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>998</StateNumber>
@@ -976,7 +986,7 @@ false Zulu
       <Rows>0.0</Rows>
       <ConcurrencyKind>safe</ConcurrencyKind>
     </routine>
-    <routine id="40" parent="23" name="uuid_generate_v1mc">
+    <routine id="42" parent="23" name="uuid_generate_v1mc">
       <ObjectId>41010</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>998</StateNumber>
@@ -988,7 +998,7 @@ false Zulu
       <Rows>0.0</Rows>
       <ConcurrencyKind>safe</ConcurrencyKind>
     </routine>
-    <routine id="41" parent="23" name="uuid_generate_v3">
+    <routine id="43" parent="23" name="uuid_generate_v3">
       <ObjectId>41011</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>998</StateNumber>
@@ -1000,7 +1010,7 @@ false Zulu
       <Rows>0.0</Rows>
       <ConcurrencyKind>safe</ConcurrencyKind>
     </routine>
-    <routine id="42" parent="23" name="uuid_generate_v4">
+    <routine id="44" parent="23" name="uuid_generate_v4">
       <ObjectId>41012</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>998</StateNumber>
@@ -1012,7 +1022,7 @@ false Zulu
       <Rows>0.0</Rows>
       <ConcurrencyKind>safe</ConcurrencyKind>
     </routine>
-    <routine id="43" parent="23" name="uuid_generate_v5">
+    <routine id="45" parent="23" name="uuid_generate_v5">
       <ObjectId>41013</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>998</StateNumber>
@@ -1024,7 +1034,7 @@ false Zulu
       <Rows>0.0</Rows>
       <ConcurrencyKind>safe</ConcurrencyKind>
     </routine>
-    <routine id="44" parent="23" name="uuid_nil">
+    <routine id="46" parent="23" name="uuid_nil">
       <ObjectId>41004</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>998</StateNumber>
@@ -1036,7 +1046,7 @@ false Zulu
       <Rows>0.0</Rows>
       <ConcurrencyKind>safe</ConcurrencyKind>
     </routine>
-    <routine id="45" parent="23" name="uuid_ns_dns">
+    <routine id="47" parent="23" name="uuid_ns_dns">
       <ObjectId>41005</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>998</StateNumber>
@@ -1048,7 +1058,7 @@ false Zulu
       <Rows>0.0</Rows>
       <ConcurrencyKind>safe</ConcurrencyKind>
     </routine>
-    <routine id="46" parent="23" name="uuid_ns_oid">
+    <routine id="48" parent="23" name="uuid_ns_oid">
       <ObjectId>41007</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>998</StateNumber>
@@ -1060,7 +1070,7 @@ false Zulu
       <Rows>0.0</Rows>
       <ConcurrencyKind>safe</ConcurrencyKind>
     </routine>
-    <routine id="47" parent="23" name="uuid_ns_url">
+    <routine id="49" parent="23" name="uuid_ns_url">
       <ObjectId>41006</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>998</StateNumber>
@@ -1072,7 +1082,7 @@ false Zulu
       <Rows>0.0</Rows>
       <ConcurrencyKind>safe</ConcurrencyKind>
     </routine>
-    <routine id="48" parent="23" name="uuid_ns_x500">
+    <routine id="50" parent="23" name="uuid_ns_x500">
       <ObjectId>41008</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>998</StateNumber>
@@ -1084,7 +1094,7 @@ false Zulu
       <Rows>0.0</Rows>
       <ConcurrencyKind>safe</ConcurrencyKind>
     </routine>
-    <column id="49" parent="37" name="patient_id">
+    <column id="51" parent="37" name="patient_id">
       <Position>1</Position>
       <DataType>uuid|0s</DataType>
       <NotNull>1</NotNull>
@@ -1092,25 +1102,25 @@ false Zulu
       <DefaultExpression>uuid_generate_v4()</DefaultExpression>
       <TypeId>2950</TypeId>
     </column>
-    <column id="50" parent="37" name="patient_first_name">
+    <column id="52" parent="37" name="patient_first_name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>1023</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="51" parent="37" name="patient_last_name">
+    <column id="53" parent="37" name="patient_last_name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>1023</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="52" parent="37" name="patient_phone">
+    <column id="54" parent="37" name="patient_phone">
       <Position>4</Position>
       <DataType>varchar(13)|0s</DataType>
       <StateNumber>1023</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="53" parent="37" name="doctor_busy">
+    <column id="55" parent="37" name="doctor_busy">
       <Position>5</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
@@ -1118,27 +1128,120 @@ false Zulu
       <DefaultExpression>false</DefaultExpression>
       <TypeId>16</TypeId>
     </column>
-    <column id="54" parent="37" name="appointment_time">
+    <column id="56" parent="37" name="appointment_time">
       <Position>6</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <StateNumber>1023</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="55" parent="37" name="dentist_pkey">
+    <column id="57" parent="37" name="telegram_id">
+      <Position>7</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>1077</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="58" parent="37" name="dentist_pkey">
       <ObjectId>49190</ObjectId>
       <StateNumber>1023</StateNumber>
       <ColNames>patient_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="56" parent="37" name="dentist_pkey">
+    <key id="59" parent="37" name="dentist_pkey">
       <ObjectId>49191</ObjectId>
       <StateNumber>1023</StateNumber>
       <ColNames>patient_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>dentist_pkey</UnderlyingIndexName>
     </key>
-    <column id="57" parent="38" name="patient_id">
+    <column id="60" parent="38" name="patient_id">
+      <Position>1</Position>
+      <DataType>uuid|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1051</StateNumber>
+      <DefaultExpression>uuid_generate_v4()</DefaultExpression>
+      <TypeId>2950</TypeId>
+    </column>
+    <column id="61" parent="38" name="patient_last_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1051</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="62" parent="38" name="patient_first_name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1051</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="63" parent="38" name="patient_phone">
+      <Position>4</Position>
+      <DataType>varchar(13)|0s</DataType>
+      <StateNumber>1051</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="64" parent="38" name="appointment_time">
+      <Position>5</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <StateNumber>1051</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="65" parent="38" name="doctor_busy">
+      <Position>6</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>1051</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="66" parent="38" name="telegram_id">
+      <Position>7</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>1078</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="67" parent="38" name="surgeon_pkey">
+      <ObjectId>57382</ObjectId>
+      <StateNumber>1051</StateNumber>
+      <ColNames>patient_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="68" parent="38" name="surgeon_pkey">
+      <ObjectId>57383</ObjectId>
+      <StateNumber>1051</StateNumber>
+      <ColNames>patient_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>surgeon_pkey</UnderlyingIndexName>
+    </key>
+    <column id="69" parent="39" name="id">
+      <Position>1</Position>
+      <DataType>uuid|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1053</StateNumber>
+      <DefaultExpression>uuid_generate_v4()</DefaultExpression>
+      <TypeId>2950</TypeId>
+    </column>
+    <column id="70" parent="39" name="app_time">
+      <Position>2</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <StateNumber>1053</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <index id="71" parent="39" name="test_table_pkey">
+      <ObjectId>57388</ObjectId>
+      <StateNumber>1053</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="72" parent="39" name="test_table_pkey">
+      <ObjectId>57389</ObjectId>
+      <StateNumber>1053</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>test_table_pkey</UnderlyingIndexName>
+    </key>
+    <column id="73" parent="40" name="patient_id">
       <Position>1</Position>
       <DataType>uuid|0s</DataType>
       <NotNull>1</NotNull>
@@ -1146,25 +1249,25 @@ false Zulu
       <DefaultExpression>uuid_generate_v4()</DefaultExpression>
       <TypeId>2950</TypeId>
     </column>
-    <column id="58" parent="38" name="patient_first_name">
+    <column id="74" parent="40" name="patient_first_name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>997</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="59" parent="38" name="patient_last_name">
+    <column id="75" parent="40" name="patient_last_name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>997</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="60" parent="38" name="patient_phone">
+    <column id="76" parent="40" name="patient_phone">
       <Position>4</Position>
       <DataType>varchar(13)|0s</DataType>
       <StateNumber>997</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="61" parent="38" name="doctor_busy">
+    <column id="77" parent="40" name="doctor_busy">
       <Position>6</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
@@ -1172,79 +1275,85 @@ false Zulu
       <DefaultExpression>false</DefaultExpression>
       <TypeId>16</TypeId>
     </column>
-    <column id="62" parent="38" name="appointment_time">
+    <column id="78" parent="40" name="appointment_time">
       <Position>7</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <StateNumber>995</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="63" parent="38" name="therapist_pkey">
+    <column id="79" parent="40" name="telegram_id">
+      <Position>8</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>1070</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="80" parent="40" name="therapist_pkey">
       <ObjectId>41001</ObjectId>
-      <StateNumber>991</StateNumber>
+      <StateNumber>1056</StateNumber>
       <ColNames>patient_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="64" parent="38" name="therapist_pkey">
+    <key id="81" parent="40" name="therapist_pkey">
       <ObjectId>41002</ObjectId>
       <StateNumber>991</StateNumber>
       <ColNames>patient_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>therapist_pkey</UnderlyingIndexName>
     </key>
-    <argument id="65" parent="39">
+    <argument id="82" parent="41">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="66" parent="40">
+    <argument id="83" parent="42">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="67" parent="41" name="namespace">
+    <argument id="84" parent="43" name="namespace">
       <Position>1</Position>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="68" parent="41" name="name">
+    <argument id="85" parent="43" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </argument>
-    <argument id="69" parent="41">
+    <argument id="86" parent="43">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="70" parent="42">
+    <argument id="87" parent="44">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="71" parent="43" name="namespace">
+    <argument id="88" parent="45" name="namespace">
       <Position>1</Position>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="72" parent="43" name="name">
+    <argument id="89" parent="45" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </argument>
-    <argument id="73" parent="43">
+    <argument id="90" parent="45">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="74" parent="44">
+    <argument id="91" parent="46">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="75" parent="45">
+    <argument id="92" parent="47">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="76" parent="46">
+    <argument id="93" parent="48">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="77" parent="47">
+    <argument id="94" parent="49">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="78" parent="48">
+    <argument id="95" parent="50">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
